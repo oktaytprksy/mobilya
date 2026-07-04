@@ -1,4 +1,4 @@
-import { BadgeCheck, Clock, Wallet, Wrench } from "lucide-react"
+import { BadgeCheck, Clock, Wrench } from "lucide-react"
 import { IconBadge } from "@/components/IconBadge"
 import { FramedImage } from "@/components/FramedImage"
 import kurucu from "@/assets/kurucu.png"
@@ -18,11 +18,6 @@ const values = [
     icon: Clock,
     title: "Zamanında Teslim",
     description: "Verdiğimiz süre içinde işi eksiksiz tamamlıyoruz.",
-  },
-  {
-    icon: Wallet,
-    title: "Yerinde Ücretsiz Keşif",
-    description: "İşinizi yerinde inceleyip net fiyat teklifi veriyoruz.",
   },
 ]
 
@@ -57,7 +52,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 gap-8 border-t border-border/60 pt-16 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-20 grid grid-cols-1 gap-8 border-t border-border/60 pt-16 sm:grid-cols-3">
           {values.map((value) => (
             <div key={value.title} className="flex flex-col gap-3">
               <IconBadge icon={value.icon} />
