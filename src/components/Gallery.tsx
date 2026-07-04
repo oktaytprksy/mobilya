@@ -11,9 +11,6 @@ export function Gallery() {
     <section id="galeri">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight">Yaptığımız İşlerden</h2>
-        <p className="mt-3 max-w-xl text-muted-foreground">
-          Tamamlanan döşeme ve tamamlama projelerimizden örnekler.
-        </p>
 
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {photos.map((photo, i) => (
