@@ -1,7 +1,7 @@
 import { BadgeCheck, Clock, Wrench } from "lucide-react"
 import { IconBadge } from "@/components/IconBadge"
 import { FramedImage } from "@/components/FramedImage"
-import kurucu from "@/assets/kurucu.png"
+import kurucu from "@/assets/kurucu.webp"
 
 const values = [
   {

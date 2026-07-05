@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react"
 import { CallButton } from "@/components/CallButton"
 import { FramedImage } from "@/components/FramedImage"
 import { business } from "@/lib/business"
-import dukkan from "@/assets/dukkan.jpg"
+import dukkan from "@/assets/dukkan.webp"
 
 export function Hero() {
   return (
@@ -37,7 +37,7 @@ export function Hero() {
           </Link>
         </div>
 
-        <FramedImage src={dukkan} alt="Toyrrum dükkanı" />
+        <FramedImage src={dukkan} alt="Toyrrum dükkanı" priority />
       </div>
     </section>
   )

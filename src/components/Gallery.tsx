@@ -1,8 +1,8 @@
 import { FramedImage } from "@/components/FramedImage"
-import photo1 from "@/assets/Gemini_Generated_Image_wd618awd618awd61.png"
-import photo2 from "@/assets/Gemini_Generated_Image_jp2olqjp2olqjp2o.png"
-import photo3 from "@/assets/Gemini_Generated_Image_53ur2m53ur2m53ur.png"
-import photo4 from "@/assets/Gemini_Generated_Image_2678ud2678ud2678.png"
+import photo1 from "@/assets/gallery1.webp"
+import photo2 from "@/assets/gallery2.webp"
+import photo3 from "@/assets/gallery3.webp"
+import photo4 from "@/assets/gallery4.webp"
 
 const photos = [photo1, photo2, photo3, photo4]
 
