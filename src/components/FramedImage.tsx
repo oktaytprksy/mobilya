@@ -3,14 +3,19 @@ export function FramedImage({
   alt,
   aspect = "4/3",
   priority = false,
+  onClick,
 }: {
   src: string
   alt: string
   aspect?: "4/3" | "square"
   priority?: boolean
+  onClick?: () => void
 }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-border">
+    <div
+      onClick={onClick}
+      className={`overflow-hidden rounded-lg border border-border ${onClick ? "cursor-pointer transition-transform hover:scale-[1.02]" : ""}`}
+    >
       <img
         src={src}
         alt={alt}
