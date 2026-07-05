@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Sofa, Hammer, PaintRoller, Scissors } from "lucide-react"
 import {
   Card,
@@ -48,22 +49,21 @@ export function Services() {
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
-            <Card
-              key={service.title}
-              className="cursor-pointer border-border/70 transition-all hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg"
-            >
-              <CardHeader>
-                <div className="mb-2">
-                  <IconBadge icon={service.icon} />
-                </div>
-                <CardTitle className="text-lg font-bold">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-sm leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link key={service.title} to="/galeri" className="block">
+              <Card className="h-full cursor-pointer border-border/70 transition-all hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg">
+                <CardHeader>
+                  <div className="mb-2">
+                    <IconBadge icon={service.icon} />
+                  </div>
+                  <CardTitle className="text-lg font-bold">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm leading-relaxed">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
