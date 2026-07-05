@@ -1,11 +1,8 @@
-import { useState } from "react"
 import { MapPin, Phone } from "lucide-react"
 import { CallButton } from "@/components/CallButton"
 import { business } from "@/lib/business"
 
 export function Contact() {
-  const [mapLoaded, setMapLoaded] = useState(false)
-
   return (
     <section id="iletisim">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2">
@@ -34,26 +31,13 @@ export function Contact() {
         </div>
 
         <div className="flex flex-col overflow-hidden rounded-lg border border-border/70">
-          {mapLoaded ? (
-            <iframe
-              title="Konum"
-              className="h-80 w-full lg:h-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              src={`https://www.google.com/maps?q=${business.mapsLat},${business.mapsLng}&z=17&output=embed`}
-            />
-          ) : (
-            // ponytail: facade — Google Maps yuklenmeden cookie set etmez, tiklaninca yuklenir
-            <button
-              type="button"
-              onClick={() => setMapLoaded(true)}
-              className="group flex h-80 w-full cursor-pointer flex-col items-center justify-center gap-3 bg-secondary/40 transition-colors hover:bg-secondary/70 lg:h-full"
-            >
-              <MapPin className="size-8 text-accent transition-transform group-hover:scale-110" />
-              <span className="font-medium">Haritayı Göster</span>
-              <span className="text-sm text-muted-foreground">{business.address}</span>
-            </button>
-          )}
+          <iframe
+            title="Konum"
+            className="h-[420px] w-full lg:h-full lg:min-h-[500px]"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            src={`https://www.google.com/maps?q=${business.mapsLat},${business.mapsLng}&z=17&output=embed`}
+          />
           <a
             href={`https://www.google.com/maps/dir/?api=1&destination=${business.mapsLat},${business.mapsLng}`}
             target="_blank"
