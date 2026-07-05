@@ -34,14 +34,22 @@ export function Contact() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-lg border border-border/70">
+        <div className="flex flex-col overflow-hidden rounded-lg border border-border/70">
           <iframe
             title="Konum"
             className="h-80 w-full lg:h-full"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps?q=${business.mapsLat},${business.mapsLng}&z=17&output=embed`}
+            src={`https://www.openstreetmap.org/export/embed.html?bbox=${business.mapsLng - 0.004},${business.mapsLat - 0.003},${business.mapsLng + 0.004},${business.mapsLat + 0.003}&layer=mapnik&marker=${business.mapsLat},${business.mapsLng}`}
           />
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${business.mapsLat},${business.mapsLng}`}
+            target="_blank"
+            rel="noreferrer"
+            className="border-t border-border/70 bg-secondary/40 px-4 py-2 text-center text-sm hover:text-accent"
+          >
+            Yol tarifi al
+          </a>
         </div>
       </div>
     </section>
