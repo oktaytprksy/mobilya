@@ -49,7 +49,7 @@ export function Gallery() {
             <FramedImage
               key={i}
               src={photo}
-              alt="Toyrrum tamamlanan iş örneği"
+              alt="Toyrum tamamlanan iş örneği"
               aspect="square"
               onClick={() => setActive(i)}
             />
@@ -65,7 +65,7 @@ export function Gallery() {
             <FramedImage
               key={i}
               src={photo}
-              alt="Toyrrum inşaat tamamlama iş örneği"
+              alt="Toyrum inşaat tamamlama iş örneği"
               aspect="square"
               onClick={() => setActive(photos.length + i)}
             />
@@ -97,7 +97,7 @@ export function Gallery() {
           </button>
           <img
             src={allPhotos[active]}
-            alt="Toyrrum iş örneği"
+            alt="Toyrum iş örneği"
             onClick={(e) => e.stopPropagation()}
             className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain"
           />
