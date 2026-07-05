@@ -1,8 +1,11 @@
-import { MapPin, Phone, Clock } from "lucide-react"
+import { useState } from "react"
+import { MapPin, Phone } from "lucide-react"
 import { CallButton } from "@/components/CallButton"
 import { business } from "@/lib/business"
 
 export function Contact() {
+  const [mapLoaded, setMapLoaded] = useState(false)
+
   return (
     <section id="iletisim">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2">
@@ -23,10 +26,6 @@ export function Contact() {
                 {business.phoneDisplay}
               </a>
             </li>
-            <li className="flex items-start gap-3">
-              <Clock className="mt-0.5 size-5 shrink-0 text-accent" />
-              <span>{business.hours}</span>
-            </li>
           </ul>
 
           <div className="mt-8">
@@ -35,13 +34,26 @@ export function Contact() {
         </div>
 
         <div className="flex flex-col overflow-hidden rounded-lg border border-border/70">
-          <iframe
-            title="Konum"
-            className="h-80 w-full lg:h-full"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.openstreetmap.org/export/embed.html?bbox=${business.mapsLng - 0.004},${business.mapsLat - 0.003},${business.mapsLng + 0.004},${business.mapsLat + 0.003}&layer=mapnik&marker=${business.mapsLat},${business.mapsLng}`}
-          />
+          {mapLoaded ? (
+            <iframe
+              title="Konum"
+              className="h-80 w-full lg:h-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src={`https://www.google.com/maps?q=${business.mapsLat},${business.mapsLng}&z=17&output=embed`}
+            />
+          ) : (
+            // ponytail: facade — Google Maps yuklenmeden cookie set etmez, tiklaninca yuklenir
+            <button
+              type="button"
+              onClick={() => setMapLoaded(true)}
+              className="group flex h-80 w-full cursor-pointer flex-col items-center justify-center gap-3 bg-secondary/40 transition-colors hover:bg-secondary/70 lg:h-full"
+            >
+              <MapPin className="size-8 text-accent transition-transform group-hover:scale-110" />
+              <span className="font-medium">Haritayı Göster</span>
+              <span className="text-sm text-muted-foreground">{business.address}</span>
+            </button>
+          )}
           <a
             href={`https://www.google.com/maps/dir/?api=1&destination=${business.mapsLat},${business.mapsLng}`}
             target="_blank"

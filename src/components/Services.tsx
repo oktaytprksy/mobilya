@@ -48,7 +48,10 @@ export function Services() {
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
-            <Card key={service.title} className="border-border/70">
+            <Card
+              key={service.title}
+              className="cursor-pointer border-border/70 transition-all hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg"
+            >
               <CardHeader>
                 <div className="mb-2">
                   <IconBadge icon={service.icon} />
