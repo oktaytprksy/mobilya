@@ -37,7 +37,7 @@ export function Hero() {
           </Link>
         </div>
 
-        <FramedImage src={dukkan} alt="Toyrum dükkanı" priority />
+        <FramedImage src={dukkan} alt="Toyroom dükkanı" priority />
       </div>
     </section>
   )

@@ -35,7 +35,7 @@ export function About() {
 
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-          <FramedImage src={kurucu} alt="Toyrum kurucusu" />
+          <FramedImage src={kurucu} alt="Toyroom kurucusu" />
 
           <div>
             <p className="text-lg leading-relaxed text-muted-foreground">
